@@ -1,79 +1,53 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Hotel Room Reservation System
 
-# Getting Started
+## Table of Contents
+- Introduction
+- Problem Statement
+- Features
+- Installation
+- Usage
+- Contributing
+- License
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Introduction
+This project is a React Native application designed to manage room reservations in a hotel with 97 rooms distributed across 10 floors. The system dynamically calculates the total travel time between booked rooms and optimally assigns rooms based on predefined rules.
 
-## Step 1: Start the Metro Server
+## Problem Statement
+A hotel has 97 rooms distributed across 10 floors:
+- **Floors 1-9**: Each floor has 10 rooms, numbered sequentially (e.g., Floor 1: 101-110, Floor 2: 201-210, and so on).
+- **Floor 10 (Top Floor)**: Has only 7 rooms, numbered 1001-1007.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### Building Structure
+1. A staircase and lift are located on the left side of the building.
+2. Rooms on each floor are arranged sequentially from left to right, with the first room on each floor being closest to the stairs/lift.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### Room Proximity (Travel Time)
+1. **Horizontal travel**: Moving between two adjacent rooms on the same floor takes 1 minute per room.
+2. **Vertical travel**: Moving between floors takes 2 minutes per floor using the stairs/lift.
 
-```bash
-# using npm
-npm start
+### Booking Rules
+1. A single guest can book up to 5 rooms at a time.
+2. Priority is to book rooms on the same floor first.
+3. If rooms are not available on the same floor, priority is to book rooms that minimize the total travel time between the first and last room in the booking.
+4. If the required number of rooms is unavailable on one floor, booking should span across floors, prioritizing rooms that minimize the combined vertical and horizontal travel time.
 
-# OR using Yarn
-yarn start
-```
+## Features
+- Interface to enter the number of rooms and book them.
+- Visualization of booking.
+- Button to generate random occupancy on rooms.
+- Button to reset entire booking.
 
-## Step 2: Start your Application
+## Installation
+To install and run the project locally, follow these steps:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/hotel-room-reservation.git
+   cd hotel-room-reservation
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+2. Install the dependencies:
+   ```bash
+   npm install
+4. Run the application:
+   ```bash
+   npm start
