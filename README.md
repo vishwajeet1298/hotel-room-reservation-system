@@ -6,8 +6,6 @@
 - Features
 - Installation
 - Usage
-- Contributing
-- License
 
 ## Introduction
 This project is a React Native application designed to manage room reservations in a hotel with 97 rooms distributed across 10 floors. The system dynamically calculates the total travel time between booked rooms and optimally assigns rooms based on predefined rules.
@@ -57,14 +55,4 @@ Enter the number of rooms: Use the interface to specify the number of rooms you 
 Visualize booking: See the booking layout and travel time calculations.
 Generate random occupancy: Click the button to simulate random room occupancy.
 Reset booking: Use the reset button to clear all bookings and start fresh.
-Contributing
-We welcome contributions! Please follow these steps to contribute:
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes.
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
